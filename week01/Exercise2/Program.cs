@@ -28,11 +28,7 @@ class Program
       else if (grade >= 60)
         {
            letter = "D"; 
-        }
-      else if (grade >= 50)
-        {
-           letter = "E"; 
-        }        
+        }       
       else 
         {
            letter = "F"; 

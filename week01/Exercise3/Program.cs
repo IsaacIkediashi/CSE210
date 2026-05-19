@@ -8,8 +8,8 @@ class Program
         Random randomGenerator = new Random();
         int magic_number = randomGenerator.Next(1, 100);
         
-        
-        int random_number = randomGenerator.Next(1, 100);
+        Console.Write("What is the magic number? ");
+        int random_number = int.Parse(Console.ReadLine());
 
         // Console.Write("What is the magic number? ");
         // int user_guess = int.Parse(Console.ReadLine());
@@ -20,13 +20,15 @@ class Program
             i += 1;   
             if (random_number > magic_number)
             {
-                Console.WriteLine("Lower!");
-                random_number = randomGenerator.Next(1, 100);
+                Console.WriteLine("Lower!");  
+                Console.Write("What is your guess? ");
+                random_number = int.Parse(Console.ReadLine());              
             }
             else if (random_number < magic_number)
             {
-                Console.WriteLine("Higher!");
-                random_number = randomGenerator.Next(1,100);
+                Console.WriteLine("Higher!");   
+                Console.Write("What is your guess? ");
+                random_number = int.Parse(Console.ReadLine());            
             }
             else
             {
@@ -35,8 +37,9 @@ class Program
                 string user_answer = Console.ReadLine();
                 if (user_answer == "yes")
                 {
-                   random_number = randomGenerator.Next(1, 100);
                    magic_number = randomGenerator.Next(1, 100);
+                   Console.Write("What is your guess? ");
+                   random_number = int.Parse(Console.ReadLine()); 
                    i = 0;
                 }
                 else

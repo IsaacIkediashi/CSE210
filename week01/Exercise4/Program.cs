@@ -9,8 +9,8 @@ class Program
       List<int> numbers = new List<int>();
       Console.WriteLine("Enter a List of numbers, type 0 when finished.");
       int total = 0;
-      int max_number = 0;
-      int min_number = 1000;
+      int max_number = numbers[0];
+      int min_number = int.MaxValue;
       
       while (true)
       {
@@ -42,7 +42,7 @@ class Program
               }             
             }
           }
-          float average = total/numbers.Count();
+          float average = (float)total/numbers.Count();
           Console.WriteLine($"The sum is: {total}");
           Console.WriteLine($"The average is: {average}");
           Console.WriteLine($"The largest number is: {max_number}");
