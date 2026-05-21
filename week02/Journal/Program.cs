@@ -37,7 +37,7 @@ class Program
             if (userChoice == 1)
             {
                 string selected_prompt = prompt.getRandomInput();
-                Console.WriteLine($"selected_prompt\nw");
+                Console.WriteLine(selected_prompt);
 
                 Console.Write("> ");
                 string userResponse = Console.ReadLine();

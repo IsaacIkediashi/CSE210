@@ -12,7 +12,7 @@ class Journal
   {
     foreach (Entry entry in _entries)
     {
-      Console.WriteLine($"Date: {entry._date} - Prompt: {entry._prompt}\n{entry._response}");
+      Console.WriteLine($"Date: {entry._date} - Prompt: {entry._prompt}\n{entry._response}\n");
     }
   }
   public void SaveToFile(string fileName)
