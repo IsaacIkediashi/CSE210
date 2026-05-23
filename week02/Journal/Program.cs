@@ -48,7 +48,7 @@ class Program
                 entry._prompt = selected_prompt;
                 entry._response = userResponse;
 
-                journal._entries.Add(entry);
+                journal.AddEntry(entry);
             }
             else if (userChoice == 2)
             {

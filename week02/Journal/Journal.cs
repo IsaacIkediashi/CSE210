@@ -8,6 +8,11 @@ class Journal
   {    
   }
 
+  public void AddEntry(Entry anEntry)
+  {
+    _entries.Add(anEntry);
+  }
+
   public void displayEntries()
   {
     foreach (Entry entry in _entries)
@@ -21,8 +26,10 @@ class Journal
     {
       foreach (Entry entry in _entries)
       {
-        outputFile.WriteLine($"{entry._date}|{entry._prompt}|{entry._response}");
+        outputFile.WriteLine("Date,Prompt,Response");
+        outputFile.WriteLine($"{entry._date},{entry._prompt},{entry._response}");
       }
+      _entries.Clear();
     }
   }
 
@@ -41,7 +48,6 @@ class Journal
      entry._response = parts[2];
 
       _entries.Add(entry);
-
     }
   }
 }
