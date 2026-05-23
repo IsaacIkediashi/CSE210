@@ -24,6 +24,7 @@ class Journal
   {
     using (StreamWriter outputFile = new StreamWriter(fileName))
     {
+      outputFile.WriteLine($"Date,Prompt,Response");
       foreach (Entry entry in _entries)
       {
         outputFile.WriteLine($"{entry._date},{entry._prompt},{entry._response}");
@@ -37,16 +38,47 @@ class Journal
     _entries.Clear();
     string[] lines = System.IO.File.ReadAllLines(fileName);
 
-    foreach (string line in lines)
+    for(int i = 1; i < lines.Length; i++)
     {
-     string[] parts = line.Split(",");
-     Entry entry = new Entry();
+      string line = lines[i];
 
-     entry._date = parts[0];
-     entry._prompt = parts[1];
-     entry._response = parts[2];
+      string[] parts = ParseCsvLine(line);
+
+      Entry entry = new Entry();
+
+      entry._date = parts[0];
+      entry._prompt = parts[1];
+      entry._response = parts[2];
 
       _entries.Add(entry);
     }
   }
+
+  private string[] ParseCsvLine(string line)
+{
+    List<string> fields = new List<string>();
+    bool inQuotes = false;
+    string currentField = "";
+
+    foreach (char c in line)
+    {
+        if (c == '"')
+        {
+            inQuotes = !inQuotes;
+        }
+        else if (c == ',' && !inQuotes)
+        {
+            fields.Add(currentField);
+            currentField = "";
+        }
+        else
+        {
+            currentField += c;
+        }
+    }
+
+    fields.Add(currentField);
+
+    return fields.ToArray();
+}
 }
