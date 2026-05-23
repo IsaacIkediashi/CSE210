@@ -8,7 +8,6 @@ class Program
         DateTime currentTime = DateTime.Now;
                
         Prompt prompt = new Prompt();
-        Entry entry = new Entry();
         Journal journal = new Journal();
 
         Console.WriteLine("Welcome to the Journal Program!");
@@ -36,6 +35,8 @@ class Program
 
             if (userChoice == 1)
             {
+                Entry entry = new Entry();
+
                 string selected_prompt = prompt.getRandomInput();
                 Console.WriteLine(selected_prompt);
 
