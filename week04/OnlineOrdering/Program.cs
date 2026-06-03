@@ -9,7 +9,6 @@ class Program
         order.SetProducts("White Cream", "EEER45", 7.8, 6);
         order.SetCustomerName("Jake Samuel");
 
-
         Order order1 = new Order();
         order1.SetProducts("Mama's Bread", "ASSER3", 4.56, 2);
         order1.SetProducts("Cream Bun", "AAWER4", 6.78, 45);
@@ -20,17 +19,18 @@ class Program
         {
           Console.WriteLine(order.PackingLabel(i));
         }
+
+        Console.WriteLine();
         Console.WriteLine(order.ShippingLabel("72, Hallway street","Water Lake","Albama","United States"));
         Console.WriteLine(order.CalculateTotalCost());
-        Console.WriteLine();
-
 
         for(int i = 0; i < order1.GetProducts().Count; i++)
         {
           Console.WriteLine(order1.PackingLabel(i));
         }
-        Console.WriteLine(order1.ShippingLabel("36, Rudoff street","New Isles","Vatican","Indonesia"));
-        Console.WriteLine(order1.CalculateTotalCost());
+
         Console.WriteLine(); 
+        Console.WriteLine(order1.ShippingLabel("36, Rudoff street","New Isles","Vatican","Indonesia"));
+        Console.WriteLine(order1.CalculateTotalCost());      
     }
 }
