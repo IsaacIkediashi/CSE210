@@ -13,21 +13,23 @@ class Program
         order1.SetProducts("Cream Bun", "AAWER4", 6.78, 45);
         order1.SetCustomerName("Michael Tom");
 
+        
+        Console.WriteLine(); 
         for(int i = 0; i < order.GetProducts().Count; i++)
         {
           Console.WriteLine(order.PackingLabel(i));
         }
 
-        Console.WriteLine();
         Console.WriteLine(order.ShippingLabel("72, Hallway street","Water Lake","Albama","United States"));
         Console.WriteLine(order.CalculateTotalCost());
 
+        
+        Console.WriteLine(); 
         for(int i = 0; i < order1.GetProducts().Count; i++)
         {
           Console.WriteLine(order1.PackingLabel(i));
         }
 
-        Console.WriteLine(); 
         Console.WriteLine(order1.ShippingLabel("36, Rudoff street","New Isles","Vatican","Indonesia"));
         Console.WriteLine(order1.CalculateTotalCost());      
     }
