@@ -32,5 +32,7 @@ class Program
 
         Console.WriteLine(order1.ShippingLabel("36, Rudoff street","New Isles","Vatican","Indonesia"));
         Console.WriteLine(order1.CalculateTotalCost());      
+        
+        Console.WriteLine(); 
     }
 }
