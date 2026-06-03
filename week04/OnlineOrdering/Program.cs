@@ -1,5 +1,4 @@
 using System;
-
 class Program
 {
     static void Main(string[] args)
@@ -13,7 +12,6 @@ class Program
         order1.SetProducts("Mama's Bread", "ASSER3", 4.56, 2);
         order1.SetProducts("Cream Bun", "AAWER4", 6.78, 45);
         order1.SetCustomerName("Michael Tom");
-
 
         for(int i = 0; i < order.GetProducts().Count; i++)
         {
