@@ -40,7 +40,7 @@ class Program
           videos[i].AddComment("Peter Matthew", " I Learnt a lot, Thanks."); 
           videos[i].AddComment("Thomas Jake", "I would like you to do another video on functions.");
           videos[i].AddComment("Tom Harris", "Your video was very helpful");
-          videos[i].AddComment("Friday Newman", "This video makes progrmming fun."); 
+          videos[i].AddComment("Friday Newman", "This video makes programming fun."); 
         }
         if (i == 1)
         {
@@ -71,7 +71,7 @@ class Program
         
         Console.WriteLine(aboutVideo);
         Console.WriteLine($"{numberComments} comments");
-        video.DisplayComment();
+        currentVideo.DisplayComment();
         Console.WriteLine();
       }
     }
