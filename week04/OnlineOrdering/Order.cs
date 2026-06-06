@@ -3,17 +3,14 @@ using System.Net.Http.Headers;
 public class Order
 {
   private List<Product> _products;
-
-
   private Customer _customer;
-
-
 
   public Order()
   {
     _products = new List<Product>();
     _customer = new Customer();
   }
+  
   public void SetCustomerName(string name)
   {
     _customer.SetCustomerName(name);
@@ -22,12 +19,10 @@ public class Order
   {
     _products.Add(new Product(name, id, price, quantity));
   }
-
   public List<Product> GetProducts()
   {
     return _products;
   }
-
   public double CalculateTotalCost()
   { 
     double _total = 0;
@@ -45,7 +40,6 @@ public class Order
      
     return _total += 35;
   }
-
   public string PackingLabel(int index)
   {
       int i = index;
@@ -54,7 +48,6 @@ public class Order
       
       return $"{name}: {id}";
   }
-
   public string ShippingLabel(string address, string city, string province, string country)
   {
     _customer.SetCustomerAddress(address, city, province, country);
