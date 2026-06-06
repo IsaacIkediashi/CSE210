@@ -7,7 +7,7 @@ public class Order
 
   private Customer _customer;
 
-  private double _total;
+
 
   public Order()
   {
@@ -30,6 +30,8 @@ public class Order
 
   public double CalculateTotalCost()
   { 
+    double _total = 0;
+    
     foreach(Product product in _products)
     {
       _total += product.DisplayTotalCost(); 

@@ -24,6 +24,15 @@ public string GetProductId()
   return _productId;
 }
 
+public double GetPrice()
+{
+  return _price;
+}
+
+public int GetQuantity()
+{
+  return _quantity;
+}
 public double DisplayTotalCost()
 {
   double amount = (double)_price * _quantity;
