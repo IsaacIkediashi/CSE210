@@ -11,6 +11,10 @@ public class Order
     _customer = new Customer();
   }
   
+  public void SetAddress(string address, string city, string province, string country)
+  {
+    _customer.SetCustomerAddress(address, city, province, country);
+  }
   public void SetCustomerName(string name)
   {
     _customer.SetCustomerName(name);
@@ -48,9 +52,8 @@ public class Order
       
       return $"{name}: {id}";
   }
-  public string ShippingLabel(string address, string city, string province, string country)
+  public string ShippingLabel()
   {
-    _customer.SetCustomerAddress(address, city, province, country);
     return $"{_customer.GetCustomerName()} - {_customer.GetCustomerAddress()}"; 
   }
 }
