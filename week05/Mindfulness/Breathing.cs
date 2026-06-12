@@ -1,8 +1,7 @@
 public class Breathing : Activity
 {
   public Breathing(string name, string text) : base(name, text)
-  {
-   
+  {  
   }
   public void Run()
   {
