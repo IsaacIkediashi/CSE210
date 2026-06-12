@@ -41,9 +41,11 @@ public class Reflection : Activity
     
 
     Console.WriteLine("Consider the following prompt:");
+    Console.WriteLine();
     Console.WriteLine($"--- {GetPrompt()[prompt]}. ---");
     Console.WriteLine();
-    Console.Write("The moment something comes to mind, press Enter to proceed.");
+    Console.WriteLine("The moment something comes to mind, press Enter to proceed.");
+    Console.Write("");
     Console.WriteLine();
     
 
@@ -74,5 +76,8 @@ public class Reflection : Activity
     Console.Write($"> {GetQuestion()[index]}");
     ShowSpinner(seconds);
     Console.WriteLine();
+
+// I added this so as not to pick the same question, anytime we call this function.
+    GetQuestion().RemoveAt(index);
   }
 }

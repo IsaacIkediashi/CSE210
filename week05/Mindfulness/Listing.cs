@@ -26,6 +26,8 @@ public class Listing : Activity
 
     Console.WriteLine("List as many responses as you can to the following prompts:");
     Console.WriteLine($"--- {GetPrompt()[index]}. ---");
+    
+
     Console.WriteLine("You may begin in: ");
     ShowCountdown(6);
 
