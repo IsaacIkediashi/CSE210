@@ -4,6 +4,9 @@ public class Activity
   private  string _message;
   private int _timeDuration;
 
+  // Exceeding Requirements:
+  // 2. A shared random generator is implemented in the base Activity class
+  //    and reused by all activities.
   protected Random _randomGenerator;
   public Activity(string name, string text)
   {
@@ -12,6 +15,8 @@ public class Activity
     _randomGenerator = new Random();
   }
 
+  // Exceeding Requirements:
+  // 3. Added an animated spinner for loading and thinking periods.
   public void ShowSpinner(int seconds)
   {
       string[] spinner = {"\\",  "/"};
@@ -68,7 +73,7 @@ public class Activity
     ShowSpinner(4);
     Console.WriteLine();
     Console.WriteLine($"You have completed {GetDuration()} seconds of the {_activity} activity.");
-    ShowSpinner(60);
+    ShowSpinner(3);
   }
   public void SetDuration(int duration)
   {

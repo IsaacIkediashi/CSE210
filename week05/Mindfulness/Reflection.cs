@@ -30,6 +30,9 @@ public class Reflection : Activity
     Console.Clear();
 
     StartMessage();
+
+    DateTime beginTime = DateTime.Now;
+    DateTime endTime = beginTime.AddSeconds(GetDuration());
     
     SetPrompts("Think of a time when you stood up for someone else.");
     SetPrompts("Think of a time when you did something really difficult.");
@@ -37,9 +40,7 @@ public class Reflection : Activity
     SetPrompts("Think of a time when you did something truly selfless.");
     
     int prompt = _randomGenerator.Next(0, GetPrompt().Count);
-    int question = _randomGenerator.Next(0, GetQuestion().Count);
-    
-
+  
     Console.WriteLine("Consider the following prompt:");
     Console.WriteLine();
     Console.WriteLine($"--- {GetPrompt()[prompt]}. ---");
@@ -47,8 +48,7 @@ public class Reflection : Activity
     Console.WriteLine("The moment something comes to mind, press Enter to proceed.");
     Console.Write("");
     Console.WriteLine();
-    
-
+  
     SetQuestions("Why was this experience meaningful to you?");
     SetQuestions("Have you ever done anything like this before?");
     SetQuestions("How did you get started?");
@@ -58,16 +58,19 @@ public class Reflection : Activity
     SetQuestions("What could you learn from this experience that applies to other situations?");
     SetQuestions("What did you learn about yourself through this experience?");
     SetQuestions("How can you keep this experience in mind in the future?");
-    
+
+    int question = _randomGenerator.Next(0, GetQuestion().Count); 
 
     Console.WriteLine("Ponder on each of these following questions as they relate to your experience");
     Console.WriteLine("\nYou may begin in:");
     Console.WriteLine();
     ShowCountdown(5);
-    Console.Clear();
-    
-    DisplayQuestion(question, 8);
-    DisplayQuestion(question, 8);
+
+
+    while (beginTime < endTime)
+    {
+        DisplayQuestion(question, 8);
+    }
 
     EndMessage();
   }
@@ -76,8 +79,10 @@ public class Reflection : Activity
     Console.Write($"> {GetQuestion()[index]}");
     ShowSpinner(seconds);
     Console.WriteLine();
-
-// I added this so as not to pick the same question, anytime we call this function.
+    
+  // Exceeding Requirements:
+  // 1. Reflection questions are removed after being shown,
+  //    ensuring no duplicate questions appear during a session.
     GetQuestion().RemoveAt(index);
   }
 }

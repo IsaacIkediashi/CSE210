@@ -5,14 +5,12 @@ public class Breathing : Activity
   }
   public void Run()
   {
+    Console.Clear();
+    StartMessage();
+    
     DateTime beginTime = DateTime.Now;
     DateTime endTime = beginTime.AddSeconds(GetDuration());
     
-
-    Console.Clear();
-    StartMessage();
-
-
     while (beginTime < endTime) 
     {     
       Console.WriteLine("\nBreathe in...");
