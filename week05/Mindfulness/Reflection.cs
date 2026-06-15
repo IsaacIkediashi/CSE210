@@ -80,9 +80,9 @@ public class Reflection : Activity
     ShowSpinner(seconds);
     Console.WriteLine();
     
-  // Exceeding Requirements:
-  // 1. Reflection questions are removed after being shown,
-  //    ensuring no duplicate questions appear during a session.
+    // Exceeding Requirements:
+    // 1. Reflection questions are removed after being shown,
+    //    ensuring no duplicate questions appear during a session.
     GetQuestion().RemoveAt(index);
   }
 }
