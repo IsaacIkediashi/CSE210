@@ -103,7 +103,21 @@ class Program
           manager.SetScore(int.Parse(lines[0]));
           for(int i = 1; i < lines.Length; i++)
           {
-              string line = lines[i];
+            string line = lines[i];
+            string[] parts = line.Split('|');
+
+            if(parts[0] == "SimpleGoal")
+            {
+                // recreate SimpleGoal
+            }
+            else if(parts[0] == "EternalGoal")
+            {
+                // recreate EternalGoal
+            }
+            else if(parts[0] == "ChecklistGoal")
+            {
+                // recreate ChecklistGoal
+            }
           }
         }
 
